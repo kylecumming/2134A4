@@ -65,9 +65,7 @@ public class AngryBot extends SpressoBot {
       }
 
       // If move is not to stay here, decrement energy level.
-      if( move != District.CURRENT ) {
-        energyLevel--;
-      }
+      useMoveEnergy(move);
     } else {
       // Else, if we do not have enough energy to attack, behave like spressobot
       move = super.getNextMove();

@@ -69,9 +69,7 @@ public class ChickenBot extends TimBot {
       }
 
       // Decrement energy level if we are moving.
-      if( move != District.CURRENT ) {
-        energyLevel--;
-      }
+      useMoveEnergy(move);
     }
     return move;
   }

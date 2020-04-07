@@ -58,6 +58,10 @@ public class DohNat {
   public boolean setTimBot( TimBot bot, int x, int y ) {
     return districts[x][y].setTimBot( bot );
   }
+  //Setting plant
+  public void setPlant(Plant p, int x, int y){
+    districts[x][y].setPlant(p);
+  }
 
 
   /** This method starts the next round of the simulation

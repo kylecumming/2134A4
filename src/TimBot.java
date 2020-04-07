@@ -194,4 +194,10 @@ public class TimBot {
   public String toString() {
     return String.format( "(%c %2d %2d)", personality, myId, energyLevel );
   }
+
+  protected void useMoveEnergy(int move){
+    if(move != District.CURRENT){
+      energyLevel--;
+    }
+  }
 }

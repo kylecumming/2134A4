@@ -69,9 +69,7 @@ public class SpressoBot extends TimBot {
       }
 
       // If the move is to anothr district, decrement energy level.
-      if( move != District.CURRENT ) {
-        energyLevel--;
-      }
+      useMoveEnergy(move);
     }
     return move;
   }

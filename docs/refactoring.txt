@@ -1,0 +1,37 @@
+1.
+File: DohNat.java, District.java, Plant.java, Spresso.java, Mericano.java
+Issue Idetified: SRP priciple was not being applied made a Plant class to seperate the plants from Districts]
+Description of fix: Made 3 new classes, Plant.java, Spresso.java, and Mericano.java
+Implemented: Yes all tests pass
+
+2.File: ChickenBot.java, SpressoBot.java, TimBot.java, AngryBot.java, BullyBot.java
+     Location (method/approx. line #): getNextMove()
+     Issue Idetified: Common code to determine the the move with
+     the lowest score
+     Description of fix: push common code into TimBot.java, creating a protected
+     method to used instead
+     Implemented: yes using method lowestScore() in TimBot.java
+
+3.
+File: ChickenBot.java, SpressoBot.java, TimBot.java
+   Location (method/approx. line #): getNextMove()
+   Issue Idetified: Common code to initialize variables used to determine
+   the scores and current District that are used within the getNextMove() method.
+   Description of fix: Create protected get methods that initalize each varibale
+   within TimBot and call them from ChickenBot and SpressoBot to set values for their
+   specific bot and for their getNextMove() methods.
+   Not Implemented
+
+4.
+File: ChickenBot.java, SpressoBot.java, TimBot.java
+   Location (method/approx. line #): getNextMove() - if (energyLevel > 0)
+   Issue Idetified: in for loop to determine scores after checking the energy level,
+   the code is the same in both ChickenBot and SpressoBot besides the values being
+   applied to the new scores and adj.
+   Description of fix: This for loop and if statement within can be pushed into the TimBot
+   class and be placed inside of a protected method that takes in an input determining the
+   amount each score is multiplied by when changed in scores[i] (i.e. for Chicken it is *1 for Spress *4)
+   as well as the values added to scores[i] and adj within the if statement, i.e. 2000 or 2, 1000 or 1.
+   This method can then be called by the respective classes within
+   their getNextMove() methods.
+   Implemented:

@@ -16,7 +16,7 @@
    Sense phase.
 */
 public class District { 
-  // Thse are the district ID used to index into the spresso and bots
+  // These are the district ID used to index into the spresso and bots
   // arrays passed to the senseDistrict method and also used to specify
   // where the TimBot wishes to fire the ion cannon.
   public static final int CURRENT = 0;
@@ -35,6 +35,8 @@ public class District {
   private int spressoJolts = 0;                  // # of jolts at harvest
   private int spressoGrowth = 0;                 // # of rounds between harvests
   private DohNat myPlanet;                       // ref to district's planet
+  private Plant myPlant;
+
 
   /** 
      This constructor initializes the district, its spresso plant counter, and
@@ -48,7 +50,7 @@ public class District {
                  jolts : number of jolts that the TimBot gets from a harvest.
                  growth : amount of time it takes to grow spresso
    */
-  public District( DohNat planet, int x, int y, int jolts, int growth ) {
+  public District( DohNat planet, int x, int y, int jolts, int growth) {
     myX = x;
     myY = y;
     myPlanet = planet;
@@ -360,5 +362,9 @@ public class District {
     } else {
       return String.format( "|          %2d|", spressoCount );
     }
+  }
+
+  public Plant setPlant(Plant p) {
+    return myPlant;
   }
 }

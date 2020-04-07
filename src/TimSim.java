@@ -37,11 +37,13 @@ public class TimSim {
     int growth = stdin.nextInt();
     int rounds = stdin.nextInt();
     int numBots = stdin.nextInt();
+    int plantNum = stdin.nextInt();
 
     // Instantiate planet and array of timbots
-    DohNat planet = new DohNat( rows, columns, jolts, growth );
+    DohNat planet = new DohNat( rows, columns, jolts, growth);
     TimBot [] bots = new TimBot[numBots];
-    
+
+
     // Load timbot configurations
     for( int i = 0; i < numBots; i++ ) {
       // Read in one timbot config
@@ -74,6 +76,25 @@ public class TimSim {
       } else if( debug ) {
         System.err.println( bots[i] + " added" );
       }
+    }
+
+    //Load plant configurations
+    for(int i=0;i<plantNum; i++){
+      String plantName = stdin.next();
+      int x = stdin.nextInt();
+      int y = stdin.nextInt();
+      int plantJolts = stdin.nextInt();
+      int plantGrowth = stdin.nextInt();
+      switch(plantName){
+      case "spressoPlant":
+        Plant s = new Spresso(plantJolts, plantGrowth);
+        planet.setPlant(s, x, y);
+        break;
+      case "mericanoPlant":
+        Plant m = new Mericano(plantJolts, plantGrowth);
+        planet.setPlant(m, x, y);
+    }
+
     }
 
     // Loop for a specified number of rounds
